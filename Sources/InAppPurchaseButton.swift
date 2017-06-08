@@ -264,13 +264,13 @@ open class InAppPurchaseButton: UIButton {
         if prefferedSize.width + prefferedTitleMargins.width < minExpandedSize.width {
             prefferedSize.width = minExpandedSize.width
         } else {
-            prefferedSize.width = prefferedSize.width + prefferedTitleMargins.width
+            prefferedSize.width += prefferedTitleMargins.width
         }
 
         if prefferedSize.height + prefferedTitleMargins.height < minExpandedSize.height {
             prefferedSize.height = minExpandedSize.height
         } else {
-            prefferedSize.height = prefferedSize.height + prefferedTitleMargins.height
+            prefferedSize.height += prefferedTitleMargins.height
         }
 
         return prefferedSize
@@ -303,7 +303,7 @@ open class InAppPurchaseButton: UIButton {
 
     private func setupBusyViewAnimation() {
         let spinAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        spinAnimation.toValue = 2 * M_PI
+        spinAnimation.toValue = 2 * Double.pi
         spinAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         spinAnimation.duration = 1
         spinAnimation.repeatCount = Float.infinity
@@ -404,7 +404,7 @@ open class InAppPurchaseButton: UIButton {
         if animate {
             UIView.animateKeyframes(withDuration: transitionAnimationDuration, delay: 0, options: [.beginFromCurrentState], animations: {
                 animBlock1()
-                }, completion: { (finished) in
+                }, completion: { _ in
                     animBlock2()
                     UIView.animateKeyframes(withDuration: self.transitionAnimationDuration, delay: 0, options: [.beginFromCurrentState], animations: {
                         animBlock3()
@@ -505,7 +505,7 @@ open class InAppPurchaseButton: UIButton {
                 }, completion: { (finished) in
                     UIView.animateKeyframes(withDuration: self.transitionAnimationDuration, delay: 0, options: [.beginFromCurrentState], animations: {
                         animBlock3()
-                        }, completion: { (finished) in
+                        }, completion: { _ in
                             UIView.animateKeyframes(withDuration: self.transitionAnimationDuration, delay: 0, options: [.beginFromCurrentState], animations: {
                                 animBlock4()
                                 }, completion: nil)
