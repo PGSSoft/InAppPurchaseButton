@@ -64,7 +64,7 @@ class ProgressView: PassthroughView {
 		progressLayer.fillColor = UIColor.clear.cgColor
 		progressLayer.strokeColor = progressColor.cgColor
 		progressLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-		progressLayer.transform = CATransform3DRotate(progressLayer.transform, -CGFloat(M_PI_2), 0, 0, 1)
+		progressLayer.transform = CATransform3DRotate(progressLayer.transform, -CGFloat(Double.pi/2), 0, 0, 1)
 		layer.addSublayer(progressLayer)
 
 		if let attributedString = attributedText {
