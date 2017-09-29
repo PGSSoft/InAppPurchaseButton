@@ -264,13 +264,15 @@ open class InAppPurchaseButton: UIButton {
         if prefferedSize.width + prefferedTitleMargins.width < minExpandedSize.width {
             prefferedSize.width = minExpandedSize.width
         } else {
-            prefferedSize.width += prefferedTitleMargins.width
+            let prefferedWidth = prefferedSize.width + prefferedTitleMargins.width
+            prefferedSize.width = prefferedWidth
         }
 
         if prefferedSize.height + prefferedTitleMargins.height < minExpandedSize.height {
             prefferedSize.height = minExpandedSize.height
         } else {
-            prefferedSize.height += prefferedTitleMargins.height
+            let prefferedHeight = prefferedSize.height + prefferedTitleMargins.height
+            prefferedSize.height = prefferedHeight
         }
 
         return prefferedSize
@@ -502,7 +504,7 @@ open class InAppPurchaseButton: UIButton {
             animBlock1()
             UIView.animateKeyframes(withDuration: self.transitionAnimationDuration, delay: 0, options: [.beginFromCurrentState], animations: {
                 animBlock2()
-                }, completion: { (finished) in
+                }, completion: { (_) in
                     UIView.animateKeyframes(withDuration: self.transitionAnimationDuration, delay: 0, options: [.beginFromCurrentState], animations: {
                         animBlock3()
                         }, completion: { _ in
