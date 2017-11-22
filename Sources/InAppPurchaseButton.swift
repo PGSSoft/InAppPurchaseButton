@@ -336,12 +336,24 @@ open class InAppPurchaseButton: UIButton {
             }
         }
 
-        setupBorderView(cornerRadius: cornerRadiusForExpandedBorder, borderColor: borderColorForInactiveState)
-        borderView.alpha = shouldAlwaysDisplayBorder ? 1 : 0
+        self.setupBorderView(cornerRadius: self.cornerRadiusForExpandedBorder, borderColor: self.borderColorForInactiveState)
+        self.borderView.alpha = self.shouldAlwaysDisplayBorder ? 1 : 0
+
+        func generateDummyAttributedString() -> NSAttributedString {
+            var attributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17)]
+
+            if let attributedTextForActiveState = attributedTextForActiveState, let attrs = attributedTextForActiveState.attributes(at: 0, longestEffectiveRange: nil, in: NSRange(location: 0, length: attributedTextForActiveState.length)) as? [NSAttributedStringKey: UIFont] {
+                attributes = attrs
+            } else if let attributedTextForInactiveState = attributedTextForInactiveState, let attrs = attributedTextForInactiveState.attributes(at: 0, longestEffectiveRange: nil, in: NSRange(location: 0, length: attributedTextForInactiveState.length)) as? [NSAttributedStringKey: UIFont] {
+                attributes = attrs
+            }
+
+            return NSAttributedString(string: " ", attributes: attributes)
+        }
 
         let animBlock1: () -> Void = {
             self.borderView.alpha = 1
-            self.setAttributedTitle(nil, for: UIControlState())
+            self.setAttributedTitle(generateDummyAttributedString(), for: UIControlState()) // For some reason, in iOS 11, setting attributed title on nil doesn't make button square, but rectangle
             self.backgroundImageView?.alpha = 0
             self.colouredBackgroundView?.alpha = 0
         }
