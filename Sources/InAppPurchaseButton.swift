@@ -139,7 +139,6 @@ open class InAppPurchaseButton: UIButton {
                 switch oldValue {
                 case .downloading(_):
                     transitionFromNormalToBusy(false, intermediateState: lastIntermediateState)
-                    break
                 default:
                     transitionFromNormalToBusy(animate)
                 }

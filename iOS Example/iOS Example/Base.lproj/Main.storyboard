@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <deployment version="2352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -10,39 +14,40 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m99-rH-Jy8" customClass="InAppPurchaseButton" customModule="InAppPurchaseButton">
+                                <rect key="frame" x="159" y="198.5" width="57" height="30"/>
                                 <state key="normal" title="Button 1"/>
                                 <connections>
                                     <action selector="inAppPurchaseButton1Touched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sqn-I4-Yr2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1x-Ch-79P" customClass="InAppPurchaseButton" customModule="InAppPurchaseButton">
+                                <rect key="frame" x="158" y="258.5" width="59" height="30"/>
                                 <state key="normal" title="Button 2"/>
                                 <connections>
                                     <action selector="inAppPurchaseButton1Touched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8fd-Gv-8Vk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8h-Fg-XUD" customClass="InAppPurchaseButton" customModule="InAppPurchaseButton">
+                                <rect key="frame" x="156" y="318.5" width="63" height="30"/>
                                 <state key="normal" title=" Button 3"/>
                                 <connections>
                                     <action selector="inAppPurchaseButton1Touched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="El5-1B-Jfx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVl-ym-I8c" customClass="InAppPurchaseButton" customModule="InAppPurchaseButton">
+                                <rect key="frame" x="157.5" y="378.5" width="60" height="30"/>
                                 <state key="normal" title="Button 4"/>
                                 <connections>
                                     <action selector="inAppPurchaseButton1Touched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dKh-uR-7SP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyf-aD-1Cv" customClass="InAppPurchaseButton" customModule="InAppPurchaseButton">
+                                <rect key="frame" x="157.5" y="438.5" width="60" height="30"/>
                                 <state key="normal" title="Button 4"/>
                                 <connections>
                                     <action selector="inAppPurchaseButton1Touched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddj-4n-Heq"/>
@@ -57,11 +62,12 @@
                             <constraint firstItem="R1x-Ch-79P" firstAttribute="top" secondItem="m99-rH-Jy8" secondAttribute="bottom" constant="30" id="KKe-H0-ALn"/>
                             <constraint firstItem="m99-rH-Jy8" firstAttribute="centerX" secondItem="R1x-Ch-79P" secondAttribute="centerX" id="Qtq-GT-tVv"/>
                             <constraint firstItem="x8h-Fg-XUD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eDm-cK-hvY"/>
-                            <constraint firstItem="x8h-Fg-XUD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f8o-eI-xVg"/>
+                            <constraint firstItem="x8h-Fg-XUD" firstAttribute="centerX" secondItem="fvD-gk-wB0" secondAttribute="centerX" id="f8o-eI-xVg"/>
                             <constraint firstItem="PVl-ym-I8c" firstAttribute="top" secondItem="x8h-Fg-XUD" secondAttribute="bottom" constant="30" id="mrh-4E-86s"/>
                             <constraint firstItem="Hyf-aD-1Cv" firstAttribute="top" secondItem="PVl-ym-I8c" secondAttribute="bottom" constant="30" id="mx8-TO-can"/>
                             <constraint firstItem="Hyf-aD-1Cv" firstAttribute="centerX" secondItem="PVl-ym-I8c" secondAttribute="centerX" id="uUQ-Cg-pll"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="fvD-gk-wB0"/>
                     </view>
                     <connections>
                         <outlet property="inAppPurchaseButton1" destination="m99-rH-Jy8" id="5RX-WT-YmS"/>

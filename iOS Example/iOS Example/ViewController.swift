@@ -102,7 +102,7 @@ class ViewController: UIViewController {
 	func generateAttributedString(_ string: String, fontColor: UIColor = .white) -> NSAttributedString {
 		let paragraphStyle = NSMutableParagraphStyle()
 		paragraphStyle.alignment = .center
-		return NSAttributedString(string: string, attributes: [NSFontAttributeName: UIFont(name: "Helvetica", size: 17)!, NSForegroundColorAttributeName: fontColor, NSParagraphStyleAttributeName: paragraphStyle])
+		return NSAttributedString(string: string, attributes: [NSAttributedStringKey.font: UIFont(name: "Helvetica", size: 17)!, NSAttributedStringKey.foregroundColor: fontColor, NSAttributedStringKey.paragraphStyle: paragraphStyle])
 	}
 
 	var defaultInactiveColor: UIColor {
