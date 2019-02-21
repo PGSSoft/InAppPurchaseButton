@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 public enum ButtonState {
     case regular(animate: Bool, intermediateState: IntermediateState)
@@ -166,7 +167,7 @@ open class InAppPurchaseButton: UIButton {
         }
 
         titleLabel.fulfillSuperview()
-        self.setAttributedTitle(self.attributedTextForInactiveState, for: UIControlState())
+        self.setAttributedTitle(self.attributedTextForInactiveState, for: UIControl.State())
 
         self.colouredBackgroundView = PassthroughView(frame: self.bounds)
         self.insertSubview(self.colouredBackgroundView, belowSubview: titleLabel)
@@ -222,12 +223,12 @@ open class InAppPurchaseButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setTitle(nil, for: UIControlState()) // Clear placeholder
+        setTitle(nil, for: UIControl.State()) // Clear placeholder
     }
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setTitle(nil, for: UIControlState()) // Clear placeholder
+        setTitle(nil, for: UIControl.State()) // Clear placeholder
     }
 
     // MARK: - Layout
@@ -247,7 +248,7 @@ open class InAppPurchaseButton: UIButton {
 
     // MARK: - Overwritten methods
 
-    open override func setAttributedTitle(_ title: NSAttributedString?, for state: UIControlState) {
+    open override func setAttributedTitle(_ title: NSAttributedString?, for state: UIControl.State) {
         super.setAttributedTitle(title, for: state)
 
         if let title = title {
@@ -305,7 +306,7 @@ open class InAppPurchaseButton: UIButton {
     private func setupBusyViewAnimation() {
         let spinAnimation = CABasicAnimation(keyPath: "transform.rotation")
         spinAnimation.toValue = 2 * Double.pi
-        spinAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        spinAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         spinAnimation.duration = 1
         spinAnimation.repeatCount = Float.infinity
         busyView.layer.add(spinAnimation, forKey: "transform.rotation")
@@ -340,11 +341,11 @@ open class InAppPurchaseButton: UIButton {
         self.borderView.alpha = self.shouldAlwaysDisplayBorder ? 1 : 0
 
         func generateDummyAttributedString() -> NSAttributedString {
-            var attributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17)]
+            var attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
 
-            if let attributedTextForActiveState = attributedTextForActiveState, let attrs = attributedTextForActiveState.attributes(at: 0, longestEffectiveRange: nil, in: NSRange(location: 0, length: attributedTextForActiveState.length)) as? [NSAttributedStringKey: UIFont] {
+            if let attributedTextForActiveState = attributedTextForActiveState, let attrs = attributedTextForActiveState.attributes(at: 0, longestEffectiveRange: nil, in: NSRange(location: 0, length: attributedTextForActiveState.length)) as? [NSAttributedString.Key: UIFont] {
                 attributes = attrs
-            } else if let attributedTextForInactiveState = attributedTextForInactiveState, let attrs = attributedTextForInactiveState.attributes(at: 0, longestEffectiveRange: nil, in: NSRange(location: 0, length: attributedTextForInactiveState.length)) as? [NSAttributedStringKey: UIFont] {
+            } else if let attributedTextForInactiveState = attributedTextForInactiveState, let attrs = attributedTextForInactiveState.attributes(at: 0, longestEffectiveRange: nil, in: NSRange(location: 0, length: attributedTextForInactiveState.length)) as? [NSAttributedString.Key: UIFont] {
                 attributes = attrs
             }
 
@@ -353,7 +354,7 @@ open class InAppPurchaseButton: UIButton {
 
         let animBlock1: () -> Void = {
             self.borderView.alpha = 1
-            self.setAttributedTitle(generateDummyAttributedString(), for: UIControlState()) // For some reason, in iOS 11, setting attributed title on nil doesn't make button square, but rectangle
+            self.setAttributedTitle(generateDummyAttributedString(), for: UIControl.State()) // For some reason, in iOS 11, setting attributed title on nil doesn't make button square, but rectangle
             self.backgroundImageView?.alpha = 0
             self.colouredBackgroundView?.alpha = 0
         }
@@ -375,7 +376,7 @@ open class InAppPurchaseButton: UIButton {
                 cornerAnimation.fromValue = self.cornerRadiusForExpandedBorder
                 cornerAnimation.toValue = self.cornerRadiusForBusyView
                 cornerAnimation.duration = self.transitionAnimationDuration
-                cornerAnimation.fillMode = kCAFillModeForwards
+                cornerAnimation.fillMode = CAMediaTimingFillMode.forwards
                 cornerAnimation.isRemovedOnCompletion = false
                 self.borderView.layer.add(cornerAnimation, forKey: "cornerRadius")
 
@@ -383,7 +384,7 @@ open class InAppPurchaseButton: UIButton {
                 colorAnimation.fromValue = self.borderView.layer.borderColor
                 colorAnimation.toValue = borderColor != nil ? borderColor!.cgColor : self.borderColorForActiveState.cgColor
                 colorAnimation.duration = self.transitionAnimationDuration
-                colorAnimation.fillMode = kCAFillModeForwards
+                colorAnimation.fillMode = CAMediaTimingFillMode.forwards
                 colorAnimation.isRemovedOnCompletion = false
                 self.borderView.layer.add(colorAnimation, forKey: "borderColor")
 
@@ -391,7 +392,7 @@ open class InAppPurchaseButton: UIButton {
                 borderAnimation.fromValue = self.borderView.layer.borderWidth
                 borderAnimation.toValue = self.borderWidthForBusyView
                 borderAnimation.duration = self.transitionAnimationDuration
-                borderAnimation.fillMode = kCAFillModeForwards
+                borderAnimation.fillMode = CAMediaTimingFillMode.forwards
                 borderAnimation.isRemovedOnCompletion = false
                 self.borderView.layer.add(borderAnimation, forKey: "borderWidth")
 
@@ -460,7 +461,7 @@ open class InAppPurchaseButton: UIButton {
                 cornerAnimation.fromValue = self.cornerRadiusForBusyView
                 cornerAnimation.toValue = self.cornerRadiusForExpandedBorder
                 cornerAnimation.duration = self.transitionAnimationDuration
-                cornerAnimation.fillMode = kCAFillModeForwards
+                cornerAnimation.fillMode = CAMediaTimingFillMode.forwards
                 cornerAnimation.isRemovedOnCompletion = false
                 self.borderView?.layer.add(cornerAnimation, forKey: "cornerRadius")
 
@@ -468,7 +469,7 @@ open class InAppPurchaseButton: UIButton {
                 colorAnimation.fromValue = self.borderView?.layer.borderColor
                 colorAnimation.toValue = borderColor.cgColor
                 colorAnimation.duration = self.transitionAnimationDuration
-                colorAnimation.fillMode = kCAFillModeForwards
+                colorAnimation.fillMode = CAMediaTimingFillMode.forwards
                 colorAnimation.isRemovedOnCompletion = false
                 self.borderView?.layer.add(colorAnimation, forKey: "borderColor")
 
@@ -476,7 +477,7 @@ open class InAppPurchaseButton: UIButton {
                 borderAnimation.fromValue = self.borderView?.layer.borderWidth
                 borderAnimation.toValue = self.borderWidthForBusyView
                 borderAnimation.duration = self.transitionAnimationDuration
-                borderAnimation.fillMode = kCAFillModeForwards
+                borderAnimation.fillMode = CAMediaTimingFillMode.forwards
                 borderAnimation.isRemovedOnCompletion = false
                 self.borderView?.layer.add(borderAnimation, forKey: "borderWidth")
 
@@ -502,7 +503,7 @@ open class InAppPurchaseButton: UIButton {
         }
 
         let animBlock3: () -> Void = {
-            self.setAttributedTitle(attributedTextForCurrentState, for: UIControlState())
+            self.setAttributedTitle(attributedTextForCurrentState, for: UIControl.State())
             self.backgroundImageView?.alpha = 1
             self.colouredBackgroundView?.alpha = 1
         }
