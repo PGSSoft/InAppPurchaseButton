@@ -53,6 +53,9 @@ open class InAppPurchaseButton: UIButton {
     /// The color of border in case when *buttonState* is in *.Regular(animate: _, intermediateState: .Active)* state.
     open var borderColorForActiveState: UIColor = DefaultSettings.activeStateColor
 
+    /// The color of view that appears when button has focus
+    open var focusColor: UIColor = DefaultSettings.focusColor
+
     /// Fill color of the button in case when *buttonState* is in *.Regular(animate: _, intermediateState: .Inactive)* state.
     /// Might be *nil*, which is equivalent to *.clearColor()*.
     open var backgroundColorForInactiveState: UIColor?
@@ -175,6 +178,13 @@ open class InAppPurchaseButton: UIButton {
         self.colouredBackgroundView.layer.cornerRadius = self.cornerRadiusForExpandedBorder
         self.colouredBackgroundView.backgroundColor = self.backgroundColorForInactiveState
 
+        self.focusBackgroundView = PassthroughView(frame: self.bounds)
+        self.insertSubview(self.focusBackgroundView, belowSubview: titleLabel)
+        self.focusBackgroundView.fulfillSuperview()
+        self.focusBackgroundView.layer.cornerRadius = self.cornerRadiusForExpandedBorder
+        self.focusBackgroundView?.backgroundColor = self.focusColor
+        self.focusBackgroundView.alpha = 0
+
         self.backgroundImageView = UIImageView(image: self.imageForInactiveState)
         self.insertSubview(self.backgroundImageView, belowSubview: titleLabel)
         self.backgroundImageView.fulfillSuperview()
@@ -214,6 +224,7 @@ open class InAppPurchaseButton: UIButton {
 
     private var backgroundImageView: UIImageView!
     private var colouredBackgroundView: PassthroughView!
+    private var focusBackgroundView: PassthroughView!
     private var borderView: PassthroughView!
     private var busyView: PassthroughView!
     private var progressView: ProgressView!
@@ -254,6 +265,19 @@ open class InAppPurchaseButton: UIButton {
         if let title = title {
             expandedSize = calculatePrefferedSize(title)
         }
+    }
+
+    open override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        super.didUpdateFocus(in: context, with: coordinator)
+
+        coordinator.addCoordinatedAnimations({
+            if self.isFocused {
+                self.focusBackgroundView.alpha = 1
+            }
+            else {
+                self.focusBackgroundView.alpha = 0
+            }
+        }, completion: nil)
     }
 
     // MARK: - Helpers
