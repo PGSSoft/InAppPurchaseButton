@@ -18,7 +18,6 @@
 		48BB9E6D1D648A9100AEBE0A /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB9E6C1D648A9100AEBE0A /* ProgressView.swift */; };
 		48BB9E6F1D648AE200AEBE0A /* DefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB9E6E1D648AE200AEBE0A /* DefaultSettings.swift */; };
 		48BB9E711D6492D000AEBE0A /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB9E701D6492D000AEBE0A /* NSAttributedString+Extensions.swift */; };
-		9ACB2635221ED0C7004C7CDB /* InAppPurchaseButton_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ACB2633221ED0C7004C7CDB /* InAppPurchaseButton_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9ACB2639221ED15B004C7CDB /* DefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB9E6E1D648AE200AEBE0A /* DefaultSettings.swift */; };
 		9ACB263A221ED15B004C7CDB /* PassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB9E691D6481AF00AEBE0A /* PassthroughView.swift */; };
 		9ACB263B221ED15B004C7CDB /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB9E6C1D648A9100AEBE0A /* ProgressView.swift */; };
@@ -55,8 +54,6 @@
 		48BB9E6E1D648AE200AEBE0A /* DefaultSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSettings.swift; sourceTree = "<group>"; };
 		48BB9E701D6492D000AEBE0A /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		9ACB2631221ED0C7004C7CDB /* InAppPurchaseButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InAppPurchaseButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9ACB2633221ED0C7004C7CDB /* InAppPurchaseButton_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InAppPurchaseButton_tvOS.h; sourceTree = "<group>"; };
-		9ACB2634221ED0C7004C7CDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ACB2646221ED317004C7CDB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -101,7 +98,6 @@
 			children = (
 				48B9733D1CDB452F0015E695 /* Sources */,
 				48AF07CB1D65ED49009E9CBF /* InAppPurchaseButtonTests */,
-				9ACB2632221ED0C7004C7CDB /* InAppPurchaseButton tvOS */,
 				48B973351CDB44710015E695 /* Products */,
 				9ACB2645221ED317004C7CDB /* Frameworks */,
 			);
@@ -168,15 +164,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9ACB2632221ED0C7004C7CDB /* InAppPurchaseButton tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				9ACB2633221ED0C7004C7CDB /* InAppPurchaseButton_tvOS.h */,
-				9ACB2634221ED0C7004C7CDB /* Info.plist */,
-			);
-			path = "InAppPurchaseButton tvOS";
-			sourceTree = "<group>";
-		};
 		9ACB2645221ED317004C7CDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +187,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ACB2635221ED0C7004C7CDB /* InAppPurchaseButton_tvOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
