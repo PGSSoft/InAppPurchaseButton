@@ -13,7 +13,7 @@
 		4834F1F61CDCD65400F5BD6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4834F1F51CDCD65400F5BD6D /* Assets.xcassets */; };
 		4834F1F91CDCD65400F5BD6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4834F1F71CDCD65400F5BD6D /* LaunchScreen.storyboard */; };
 		484E3CE81CE0693100B08B37 /* InAppPurchaseButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484E3CE71CE0692900B08B37 /* InAppPurchaseButton.framework */; };
-		484E3CE91CE0693100B08B37 /* InAppPurchaseButton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 484E3CE71CE0692900B08B37 /* InAppPurchaseButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9ACB2648221ED3EA004C7CDB /* InAppPurchaseButton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 484E3CE71CE0692900B08B37 /* InAppPurchaseButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,19 +24,26 @@
 			remoteGlobalIDString = 48B973341CDB44710015E695;
 			remoteInfo = "InAppPurchaseButton iOS";
 		};
-		484E3CEA1CE0693100B08B37 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 484E3CE21CE0692900B08B37 /* InAppPurchaseButton.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 48B973331CDB44710015E695;
-			remoteInfo = "InAppPurchaseButton iOS";
-		};
 		48B932A61D66DF1F00403C4C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 484E3CE21CE0692900B08B37 /* InAppPurchaseButton.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 48AF07CA1D65ED49009E9CBF;
 			remoteInfo = InAppPurchaseButtonTests;
+		};
+		9ACB2641221ED1BF004C7CDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 484E3CE21CE0692900B08B37 /* InAppPurchaseButton.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9ACB2631221ED0C7004C7CDB;
+			remoteInfo = "InAppPurchaseButton tvOS";
+		};
+		9ACB2643221ED1C2004C7CDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 484E3CE21CE0692900B08B37 /* InAppPurchaseButton.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 48B973331CDB44710015E695;
+			remoteInfo = "InAppPurchaseButton iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -47,7 +54,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				484E3CE91CE0693100B08B37 /* InAppPurchaseButton.framework in Embed Frameworks */,
+				9ACB2648221ED3EA004C7CDB /* InAppPurchaseButton.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				484E3CE71CE0692900B08B37 /* InAppPurchaseButton.framework */,
+				9ACB2642221ED1BF004C7CDB /* .framework */,
 				48B932A71D66DF1F00403C4C /* InAppPurchaseButtonTests.xctest */,
 			);
 			name = Products;
@@ -131,7 +139,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				484E3CEB1CE0693100B08B37 /* PBXTargetDependency */,
+				9ACB2644221ED1C2004C7CDB /* PBXTargetDependency */,
 			);
 			name = "iOS Example";
 			productName = "iOS Example";
@@ -193,6 +201,13 @@
 			remoteRef = 48B932A61D66DF1F00403C4C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		9ACB2642221ED1BF004C7CDB /* .framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = .framework;
+			remoteRef = 9ACB2641221ED1BF004C7CDB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -221,10 +236,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		484E3CEB1CE0693100B08B37 /* PBXTargetDependency */ = {
+		9ACB2644221ED1C2004C7CDB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "InAppPurchaseButton iOS";
-			targetProxy = 484E3CEA1CE0693100B08B37 /* PBXContainerItemProxy */;
+			targetProxy = 9ACB2643221ED1C2004C7CDB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
