@@ -267,6 +267,7 @@ open class InAppPurchaseButton: UIButton {
         }
     }
 
+    @available(iOSApplicationExtension 9.0, *)
     open override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         super.didUpdateFocus(in: context, with: coordinator)
 
