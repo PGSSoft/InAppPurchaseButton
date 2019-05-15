@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name = 'InAppPurchaseButton'
-	s.version = '1.0.4'
+	s.version = '1.0.5'
 	s.license = 'MIT'
 	s.summary = 'In-App Purchase Button written in Swift'
 	s.homepage = 'https://github.com/PGSSoft/InAppPurchaseButton'
