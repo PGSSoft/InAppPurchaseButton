@@ -6,7 +6,7 @@
 //
 //
 
-import Foundation
+import UIKit
 
 enum DefaultSettings {
 	static let inactiveStateColor = UIColor(red: 198 / 255, green: 107 / 255, blue: 160 / 255, alpha: 1)
