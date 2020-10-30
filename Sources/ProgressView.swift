@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import CoreGraphics
+import UIKit
 class ProgressView: PassthroughView {
 
 	// MARK: - Properties

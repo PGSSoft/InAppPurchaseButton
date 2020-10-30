@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tvOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyk-aC-fpN" customClass="InAppPurchaseButton" customModule="InAppPurchaseButton">
+                                <rect key="frame" x="863" y="267" width="195" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="inAppPurchaseButton1Touched:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="HZ6-aU-TEZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-cC-J3t" customClass="InAppPurchaseButton" customModule="InAppPurchaseButton">
+                                <rect key="frame" x="863" y="387" width="195" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="inAppPurchaseButton1Touched:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="jGR-vS-oCR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7w-io-TNT" customClass="InAppPurchaseButton" customModule="InAppPurchaseButton">
+                                <rect key="frame" x="863" y="497" width="195" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="inAppPurchaseButton1Touched:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="ChJ-Bc-FMC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnu-aW-KQb" customClass="InAppPurchaseButton" customModule="InAppPurchaseButton">
+                                <rect key="frame" x="863" y="605" width="195" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="inAppPurchaseButton1Touched:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="zan-yU-4pz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lF8-df-CgB" customClass="InAppPurchaseButton" customModule="InAppPurchaseButton">
+                                <rect key="frame" x="863" y="715" width="195" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="inAppPurchaseButton1Touched:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="5ri-tm-XK3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="F7w-io-TNT" firstAttribute="top" secondItem="yAh-cC-J3t" secondAttribute="bottom" constant="24" id="7Ak-9j-qx6"/>
+                            <constraint firstItem="yAh-cC-J3t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cij-Oc-frD"/>
+                            <constraint firstItem="rnu-aW-KQb" firstAttribute="top" secondItem="F7w-io-TNT" secondAttribute="bottom" constant="22" id="Pzx-Ka-f89"/>
+                            <constraint firstItem="rnu-aW-KQb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VG5-ug-RsD"/>
+                            <constraint firstItem="lF8-df-CgB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cmW-3x-eAm"/>
+                            <constraint firstItem="F7w-io-TNT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hQO-ks-3zj"/>
+                            <constraint firstItem="yAh-cC-J3t" firstAttribute="top" secondItem="gyk-aC-fpN" secondAttribute="bottom" constant="34" id="isf-kf-fQj"/>
+                            <constraint firstItem="lF8-df-CgB" firstAttribute="top" secondItem="rnu-aW-KQb" secondAttribute="bottom" constant="24" id="l3z-YQ-X3h"/>
+                            <constraint firstItem="gyk-aC-fpN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tCq-Wj-IqB"/>
+                            <constraint firstItem="F7w-io-TNT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="umT-BB-Jcr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
+                    </view>
+                    <connections>
+                        <outlet property="inAppPurchaseButton1" destination="gyk-aC-fpN" id="2vu-Nl-lOC"/>
+                        <outlet property="inAppPurchaseButton2" destination="yAh-cC-J3t" id="VVd-8x-AWa"/>
+                        <outlet property="inAppPurchaseButton3" destination="F7w-io-TNT" id="w98-7I-c8H"/>
+                        <outlet property="inAppPurchaseButton4" destination="rnu-aW-KQb" id="DVX-pS-agI"/>
+                        <outlet property="inAppPurchaseButton5" destination="lF8-df-CgB" id="w3W-RV-3ZY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
