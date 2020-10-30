@@ -4,11 +4,12 @@
 
 A simple and customisable in-app purchase button, written in Swift.
 
-[![Swift 5.0](https://img.shields.io/badge/Swift-5.0-green.svg?style=flat)](https://swift.org/)
+[![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange)](https://swift.org/)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/InAppPurchaseButton.svg)](https://cocoapods.org/pods/InAppPurchaseButton)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Platform](https://img.shields.io/cocoapods/p/InAppPurchaseButton.svg)](http://cocoadocs.org/docsets/InAppPurchaseButton)
-[![License](https://img.shields.io/cocoapods/l/InAppPurchaseButton.svg)](https://github.com/PGSSoft/InAppPurchaseButton)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen)](https://github.com/Carthage/Carthage)
+[![SMP](https://img.shields.io/badge/SMP-supported-brightgreen)](https://swift.org/package-manager/)
+[![Platform](https://img.shields.io/badge/platform-ios%20%7C%20tvos-lightgrey)](http://cocoadocs.org/docsets/InAppPurchaseButton)
+[![License](https://img.shields.io/cocoapods/l/InAppPurchaseButton.svg)](https://github.com/PGSSoft/InAppPurchaseButton/blob/master/LICENSE)
 
 ![InAppPurchaseButton.gif](Assets/InAppPurchaseButton.gif)
 
@@ -26,9 +27,11 @@ or using [Carthage](https://github.com/Carthage/Carthage) and add a line to `Car
 github "PGSSoft/InAppPurchaseButton"
 ```
 
+or [Swift Package Manager](https://swift.org/package-manager/) (SMP)
+
 ## Requirements
 
-iOS 8.4
+iOS, tvOS 9.0
 
 ## Usage
 
