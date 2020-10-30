@@ -7,7 +7,7 @@ A simple and customisable in-app purchase button, written in Swift.
 [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange)](https://swift.org/)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/InAppPurchaseButton.svg)](https://cocoapods.org/pods/InAppPurchaseButton)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen)](https://github.com/Carthage/Carthage)
-[![SMP](https://img.shields.io/badge/SMP-supported-brightgreen)](https://swift.org/package-manager/)
+[![SPM](https://img.shields.io/badge/SPM-supported-brightgreen)](https://swift.org/package-manager/)
 [![Platform](https://img.shields.io/badge/platform-ios%20%7C%20tvos-lightgrey)](http://cocoadocs.org/docsets/InAppPurchaseButton)
 [![License](https://img.shields.io/cocoapods/l/InAppPurchaseButton.svg)](https://github.com/PGSSoft/InAppPurchaseButton/blob/master/LICENSE)
 
