@@ -6,7 +6,7 @@ let package = Package(
     name: "InAppPurchaseButton",
     platforms: [
         .macOS("10.15"),
-        .iOS("8.4")
+        .iOS("9.0")
     ],
     products: [
         .library(name: "InAppPurchaseButton", targets: ["InAppPurchaseButton"])
@@ -14,6 +14,7 @@ let package = Package(
     targets: [
         .target(
             name: "InAppPurchaseButton",
-            path: "Sources")
+            path: "Sources",
+            exclude: ["Info-iOS.plist"])
     ]
 )
